@@ -1,0 +1,25 @@
+name: Fetch RVC base models
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download from HuggingFace
+        run: |
+          pip install -q huggingface_hub
+          hf download lj1995/VoiceConversionWebUI --revision main --include "hubert_base/*" --local-dir assets
+          hf download lj1995/VoiceConversionWebUI rmvpe.pt --revision main --local-dir assets/rmvpe
+          cd assets && zip -r ../hubert_base.zip hubert_base && cd ..
+          cp assets/rmvpe/rmvpe.pt ./rmvpe.pt
+          ls -la hubert_base.zip rmvpe.pt
+      - name: Upload to GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create models-v1 hubert_base.zip rmvpe.pt \
+            --title "RVC base models" --notes "hubert_base + rmvpe (from HuggingFace lj1995/VoiceConversionWebUI)" \
+            || gh release upload models-v1 hubert_base.zip rmvpe.pt --clobber
