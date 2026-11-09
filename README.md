@@ -244,3 +244,5 @@ Model `assets/weights/PorcayV2_e300_s3600.pth` içinde hazır (RVC v2).
 WebUI'de "Model" listesinden `PorcayV2_e300_s3600.pth` seç, ses dosyası yükle, F0 yöntemi olarak `rmvpe` kullan.
 
 **GitHub Codespaces (Colab'sız):** Code → Codespaces → Create codespace. Kurulum bitince "Ports" sekmesindeki 7865 satırının linki siten olur (Visibility: Public yap).
+
+**Yazıdan Porçay sesi:** `python porcay_tts.py` → `http://localhost:7870`. Metni yaz, Türkçe sese çevrilir, Porçay modeliyle dönüştürülür. Çıktı MP3 olarak `outputs/` klasörüne kaydedilir (`GH_REPO` ve `GH_TOKEN` tanımlıysa GitHub'a da yüklenir).
