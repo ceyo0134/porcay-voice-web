@@ -230,3 +230,15 @@ python webui.py --noautoopen
 <a href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/graphs/contributors" target="_blank">
   <img src="https://contrib.rocks/image?repo=RVC-Project/Retrieval-based-Voice-Conversion-WebUI" />
 </a>
+
+
+---
+## Porçay Web Kurulumu (bu fork)
+
+Model `assets/weights/PorcayV2_e300_s3600.pth` içinde hazır (RVC v2).
+
+**Colab (önerilen, ücretsiz GPU):** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ceyo0134/porcay-voice-web/blob/main/Porcay_Colab.ipynb)
+
+**Kendi sunucun:** `bash setup_and_run.sh gpu` (veya `cpu`) → `http://localhost:7865`
+
+WebUI'de "Model" listesinden `PorcayV2_e300_s3600.pth` seç, ses dosyası yükle, F0 yöntemi olarak `rmvpe` kullan.
