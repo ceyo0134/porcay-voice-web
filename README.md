@@ -242,3 +242,5 @@ Model `assets/weights/PorcayV2_e300_s3600.pth` içinde hazır (RVC v2).
 **Kendi sunucun:** `bash setup_and_run.sh gpu` (veya `cpu`) → `http://localhost:7865`
 
 WebUI'de "Model" listesinden `PorcayV2_e300_s3600.pth` seç, ses dosyası yükle, F0 yöntemi olarak `rmvpe` kullan.
+
+**GitHub Codespaces (Colab'sız):** Code → Codespaces → Create codespace. Kurulum bitince "Ports" sekmesindeki 7865 satırının linki siten olur (Visibility: Public yap).

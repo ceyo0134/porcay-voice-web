@@ -1,0 +1,9 @@
+{
+  "name": "Porcay RVC WebUI",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "hostRequirements": { "cpus": 4, "memory": "8gb" },
+  "forwardPorts": [7865],
+  "portsAttributes": { "7865": { "label": "Porcay Ses Klonu", "onAutoForward": "openBrowser" } },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/start.sh"
+}
